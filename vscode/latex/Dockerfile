@@ -5,11 +5,11 @@ RUN apt update \
     && mkdir /var/run/sshd \
     && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config \
-    && sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config \
     && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config \
-    && echo 'root:latex' | chpasswd
+    && echo 'root:root' | chpasswd
 
-RUN apt install -y texlive-base texlive-bibtex-extra texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-latex-recommended latex-cjk-all
+COPY ./requirements /root/requirements
+RUN xargs apt install -y < /root/requirements
 
 EXPOSE 22
 

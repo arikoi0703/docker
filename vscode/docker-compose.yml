@@ -3,6 +3,7 @@ version: '3.7'
 services: 
   latex:
     build: ./latex
+    container_name: vscode-latex
     environment:
       - PUID=1000
       - PGID=1000
