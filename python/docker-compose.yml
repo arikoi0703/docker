@@ -1,0 +1,10 @@
+version: "3"
+services:
+    tweebot:
+        build: ./tweebot 
+        container_name: tweebot 
+        restart: unless-stopped
+        volumes:
+            - ./tweebot/script:/script:ro
+        command:
+            sh -c "python3 main.py"
