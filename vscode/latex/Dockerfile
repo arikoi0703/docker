@@ -4,12 +4,12 @@ RUN \
     apt-get update && \
     apt-get install -y openssh-server wget make && \
     mkdir /var/run/sshd && \
-    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config && \
-    sed -i 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
+    sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config && \
     echo 'root:change_me' | chpasswd && \
     useradd -m arikoi -s /bin/bash && \
-    echo 'arikoi:arikoi' | chpasswd
+    echo 'arikoi:change_me_too' | chpasswd
 
 
 COPY ./requirements /root/requirements
