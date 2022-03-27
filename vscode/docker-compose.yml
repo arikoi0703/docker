@@ -11,5 +11,9 @@ services:
       - ./latex/workspace:/root/
       - /root/.ssh/authorized_keys:/root/.ssh/authorized_keys
     ports:
+<<<<<<< HEAD
       - '0.0.0.0:1201:22'
+=======
+      - '0.0.0.0:2222:22'
+>>>>>>> fe0e68620e44252758713c69c570b9d0bbe4f7c6
     restart: unless-stopped
