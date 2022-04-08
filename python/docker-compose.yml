@@ -6,6 +6,6 @@ services:
         volumes:
             - ./tweebot/script:/script:ro
         command:
-            sh -c "python3 main.py"
+            sh -c "python3 /script/main.py"
         restart: unless-stopped
 
