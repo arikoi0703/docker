@@ -12,10 +12,10 @@ services:
             - PGID=1000
             - TZ=Europe/London
             - SERVERPORT=51820
-            - PEERS=2 #optional
+            - PEERS=pc #optional
             - PEERDNS=auto #optional
             - INTERNAL_SUBNET=10.10.0.0 #optional
-            - ALLOWEDIPS=10.10.0.0/8 #optional
+            - ALLOWEDIPS=0.0.0.0/8 #optional
         volumes:
             - /lib/modules:/lib/modules
             - /home/arikoi/docker/wireguard/config:/config
