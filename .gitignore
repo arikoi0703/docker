@@ -5,5 +5,5 @@ vscode/latex/workspace/
 vscode/.*
 wireguard/config/
 isc
-hath
+hath/server
 CTFd

@@ -15,7 +15,7 @@ services:
             - PEERS=pc #optional
             - PEERDNS=auto #optional
             - INTERNAL_SUBNET=10.10.0.0 #optional
-            - ALLOWEDIPS=0.0.0.0/8 #optional
+            - ALLOWEDIPS=0.0.0.0/0 #optional
         volumes:
             - /lib/modules:/lib/modules
             - /home/arikoi/docker/wireguard/config:/config

@@ -1,0 +1,16 @@
+version: '3.7'
+
+services: 
+  hath:
+    image: openjdk:11 
+    container_name: hath
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./server:/server
+    ports:
+      - '0.0.0.0:65534:65534'
+    command:
+      sh -c 'java -jar /server/HentaiAtHome.jar < /server/client.info'
+    restart: unless-stopped
