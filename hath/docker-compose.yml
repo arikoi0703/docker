@@ -7,10 +7,11 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+    working_dir: /server
     volumes:
       - ./server:/server
     ports:
       - '0.0.0.0:65534:65534'
     command:
-      sh -c 'java -jar /server/HentaiAtHome.jar < /server/client.info'
+      java -jar HentaiAtHome.jar
     restart: unless-stopped
