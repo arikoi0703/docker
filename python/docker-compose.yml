@@ -1,13 +1,12 @@
 version: "3"
 services:
-    tweebot:
-        build: ./tweebot
-        image: py-tweebot
-        container_name: tweebot
-        volumes:
-            - ./tweebot/script:/script
-        working_dir: /script
-        command:
-            python3 main.py
-        restart: unless-stopped
-
+  tweebot:
+    build: ./tweebot
+    image: py-tweebot
+    container_name: tweebot
+    volumes:
+      - ./tweebot/script:/script
+    working_dir: /script
+    command:
+      python3 main.py
+    restart: unless-stopped

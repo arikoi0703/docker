@@ -11,9 +11,12 @@ RUN \
     useradd -m arikoi -s /bin/bash && \
     echo 'arikoi:change_me_too' | chpasswd
 
-
 COPY ./requirements /root/requirements
 RUN xargs apt-get install -y < /root/requirements
+
+RUN apt-get clean autoclean && \
+    apt-get autoremove --yes && \
+    rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 EXPOSE 22
 
