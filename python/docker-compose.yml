@@ -4,9 +4,6 @@ services:
     build: ./tweebot
     image: py-tweebot
     container_name: tweebot
-    volumes:
-      - ./tweebot/script:/script
-    working_dir: /script
     command:
-      python3 main.py
+      ./main
     restart: unless-stopped
