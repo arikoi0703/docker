@@ -4,14 +4,12 @@ services:
   hath:
     image: openjdk:8-jre-alpine
     container_name: hath
-    environment:
-      - PUID=1000
-      - PGID=1000
-    working_dir: /hath-client
+    restart: unless-stopped
+    env_file:
+      - ../env_file.d/env.id
     volumes:
       - ./hath-client:/hath-client
     ports:
       - '0.0.0.0:443:443'
-    command:
-      java -jar HentaiAtHome.jar
-    restart: unless-stopped
+    working_dir: /hath-client
+    command: java -jar HentaiAtHome.jar

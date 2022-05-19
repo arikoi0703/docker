@@ -3,8 +3,8 @@ COPY script /script
 WORKDIR /script
 RUN apk update && \
     apk add --no-cache binutils && \
-    pip install --no-cache-dir 
-RUN pyinstaller tweepy && \
+    pip install --no-cache-dir pyinstaller
+RUN pip install --no-cache-dir tweepy && \
     pyinstaller -F main.py
 
 FROM alpine

@@ -4,6 +4,5 @@ services:
     build: ./tweebot
     image: py-tweebot
     container_name: tweebot
-    command:
-      ./main
     restart: unless-stopped
+    command: ./main

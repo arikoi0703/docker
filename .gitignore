@@ -7,3 +7,4 @@ wireguard/config/
 isc
 hath/hath-client
 CTFd
+env_file.d/env.id
