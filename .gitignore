@@ -1,6 +1,6 @@
 python/tweebot/script/__pycache__
 python/tweebot/script/key.py
-python/tweebot/script/screen_name.list
+python/tweebot/screen_name.list
 vscode/latex/workspace/
 vscode/.*
 wireguard/config/

@@ -4,5 +4,7 @@ services:
     build: ./tweebot
     image: py-tweebot
     container_name: tweebot
+    volumes:
+      - ./tweebot/screen_name.list:/screen_name.list
     restart: unless-stopped
     command: ./main
