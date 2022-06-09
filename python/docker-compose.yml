@@ -4,7 +4,14 @@ services:
     build: ./tweebot
     image: py-tweebot
     container_name: tweebot
+    networks:
+      - default
     volumes:
       - ./tweebot/screen_name.list:/screen_name.list
     restart: unless-stopped
     command: ./main
+
+networks:
+  default:
+    name: $DEFAULT_NETWORK
+    external: true
