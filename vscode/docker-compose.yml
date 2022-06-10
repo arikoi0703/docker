@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services: 
   latex:
@@ -13,8 +13,3 @@ services:
       - ~/.ssh/authorized_keys:/home/arikoi/.ssh/authorized_keys
     ports:
       - '0.0.0.0:1201:22'
-
-networks:
-  default:
-    name: $DEFAULT_NETWORK
-    external: true
